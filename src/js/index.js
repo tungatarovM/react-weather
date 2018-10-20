@@ -1,3 +1,4 @@
+import '../sass/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
 
@@ -9,7 +10,7 @@ class Test extends React.Component {
     }
 }
 
-React.Dom(
+ReactDom.render(
     <Test />,
     document.getElementById('container')
 );
