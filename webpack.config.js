@@ -1,12 +1,14 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = {
     entry: './src/js/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -16,17 +18,24 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract(
-                    {
-                        fallback: 'style-loader',
-                        use: ['css-loader', 'sass-loader']
-                    }
-                )
+                use:  [ 
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader', 
+                    'sass-loader'
+                ]
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin({ filename: 'style.css'}),
+        // new ExtractTextPlugin({ 
+        //     filename: 'style.[chunkhash].css',
+        //     disable: false,
+        //     allChunks: true,
+        // }),
+        new MiniCssExtractPlugin({
+            filename: 'style.[contenthash].css',
+        }),
         new HtmlPlugin({
             inject: false,
             hash: true,
