@@ -23,9 +23,19 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader', 
                     'sass-loader'
-                ]
+                ],
+            },
+            {
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+                loader: 'resolve-url-loader',
+                options: {
+                    limit: 10000
+                }
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         // new ExtractTextPlugin({ 
