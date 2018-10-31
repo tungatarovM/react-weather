@@ -38,11 +38,6 @@ module.exports = {
         historyApiFallback: true
     },
     plugins: [
-        // new ExtractTextPlugin({ 
-        //     filename: 'style.[chunkhash].css',
-        //     disable: false,
-        //     allChunks: true,
-        // }),
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
