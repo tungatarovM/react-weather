@@ -1,16 +1,32 @@
-import '../sass/main.scss';
 import React from 'react';
 import ReactDom from 'react-dom';
+import {
+    Route,
+    Switch,
+    BrowserRouter as Router,
+} from 'react-router-dom';
 
-class Test extends React.Component {
+import '../sass/main.scss';
+
+import Header from './components/Header';
+import  PrimaryForm from './components/Form';
+
+class App extends React.Component {
     render() {
-        return (
-            <h1>Hello, World!</h1>
-        );
+      return (
+        <Router>
+          <div>
+            <Header />
+            <main>
+              <Route path="/" component={PrimaryForm} />
+            </main>
+          </div>
+        </Router>  
+      );
     }
 }
 
 ReactDom.render(
-    <Test />,
-    document.getElementById('container')
+    <App />,
+    document.getElementById('react-container')
 );
