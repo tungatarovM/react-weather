@@ -1,7 +1,8 @@
 .btn {
   color: $color-grey-light-1;
-  padding: .8rem 1rem;
+  padding: .9rem 1rem;
   border-radius: 5px;
+  text-align: center;
 
   &--green {
     background-color: $color-button-green;
@@ -13,5 +14,10 @@
 
   &--small {
     width: 10rem;
+  }
+
+  &--btn-link {
+    text-decoration: none;
+    font-size: 1.3rem;
   }
 }
