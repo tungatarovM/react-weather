@@ -1,6 +1,6 @@
 
-const appId = '5b8f82b2a67ff6355d47964d444671b6';
-const baseUrl = 'http://api.openweathermap.org/data/2.5/';
+const appId = '26df31deaf1c433292f92242183110';
+const baseUrl = 'https://api.apixu.com/v1/';
 
 
 const prepRouteParams = (queryStringData) => {
@@ -23,11 +23,10 @@ const getQueryStringData = (city) => {
   };
 };
 
-export const getForcast = (city) => {
+export const getForecast = (city) => {
   const queryStringData = getQueryStringData(city);
   const url = prepUrl('forecast.json', queryStringData);
 
   return fetch(url)
-    .then(res => res.json())
-    .then(res => console.log(res));
+    .then(res => res.json());
 }
