@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getForecast } from '../../utils/api';
 
 class PrimaryForm extends React.Component {
   constructor(props) {
@@ -24,17 +23,6 @@ class PrimaryForm extends React.Component {
   }
 
   handleClick(e) {
-    // getForecast(this.state.city)
-    //   .then(res => res.forecast.forecastday)
-    //   .then(res => res.map((el) => {
-    //       return {
-    //         date: el.date,
-    //         avgTemp: el.day.avgtemp_c,
-    //         condition: el.day.condition.text,
-    //       };
-    //     })
-    //   )
-    // .then(res => this.props.handleSubmit(res));
     e.preventDefault();
     this.props.onClick(this.state.city);
 
