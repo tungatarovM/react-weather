@@ -25,6 +25,7 @@ class HeaderForm extends React.Component {
   handleClick(e) {
     e.preventDefault();
     this.props.onClick(this.state.city);
+
     this.setState({
       city: '',
     })
@@ -37,7 +38,8 @@ class HeaderForm extends React.Component {
             <input 
             className="form__input form__input--secondary" 
             type="text" placeholder="Enter a city name" 
-            onChange={this.handleUpdate}/>
+            onChange={this.handleUpdate}
+            value={this.state.city}/>
 
             <button
             className="btn btn--green btn--small btn--btn-link"
