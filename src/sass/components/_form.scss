@@ -5,14 +5,14 @@
 
     &__group {
         display: flex;
+        align-items: center;
 
         &--primary {
-            align-items: center;
             flex-direction: column;
         }
 
         &--secondary {
-            align-items: center;
+            flex-direction: row;
         }
     }
 
