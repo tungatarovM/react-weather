@@ -16,3 +16,29 @@ body {
     font-size: 5rem;
     color: $color-grey-light-1;
 }
+
+.heading-tertiary {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: $color-black-1;
+}
+.heading-loading {
+    font-weight: 400;
+    font-size: 5rem;
+    color: $color-black-1;
+}
+
+.date {
+    text-align: center;
+
+    &--month {
+        display: block;
+        margin-bottom: .5rem;
+    }
+
+    &--week {
+        display: block;
+    }
+    
+}
+
