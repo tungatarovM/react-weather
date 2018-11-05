@@ -1,7 +1,9 @@
 .header {
-  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head-wrapper {
   background-image: linear-gradient(to right, $color-orange-light-3, $color-orange-dark-2);
-
- 
-
 }

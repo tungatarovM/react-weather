@@ -1,3 +1,11 @@
+@mixin min-max($min-width, $max-width, $padding) {
+    min-width: $min-width;
+    max-width: $max-width;
+    padding: 0 $padding;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
 @mixin absPosition {
     position: absolute;
     top: 50%;

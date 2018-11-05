@@ -10,3 +10,10 @@ body {
     box-sizing: border-box;
 }
 
+.container {
+    @include min-max(32em, 100%, 0);
+}
+
+.wrap {
+    @include min-max(32em, 120em, 1.5rem);
+}

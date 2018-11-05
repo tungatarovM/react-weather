@@ -67,7 +67,7 @@ class Forecast extends React.Component {
       )
     } else {
       return (
-        <ul className="weather">
+        <ul className="weather wrap">
           {this.state.forecast.map((dayDt, index) => {
             return (
               <DayItem key={index} day={dayDt} />

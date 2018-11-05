@@ -10,14 +10,16 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header className="header">
-        <div className="header__title">
-          <h1 className="heading-primary">
-            Main Header
-          </h1>
-        </div>
-        <HeaderForm onClick={this.props.onClick} />
-    </header>
+      <div className="head-wrapper">
+        <header className="header wrap">
+          <div className="header__title">
+            <h1 className="heading-primary">
+              Main Header
+            </h1>
+          </div>
+          <HeaderForm onClick={this.props.onClick} />
+      </header>
+    </div>
     )
   }
 }
