@@ -6,10 +6,10 @@ import { getForecast } from '../utils/api';
 import { getDate } from '../utils/helpers';
 
 const DayItem = (props) => {
+  console.log(props.day);
   const date = getDate(props.day.date);
-  console.log(date);
   return (
-    <li className="weather__day">
+    <li onClick={props.onClick} className="weather__day">
       <div className="weather__icon">
         <img src={props.day.condition.icon}></img>
       </div>
@@ -29,18 +29,18 @@ class Forecast extends React.Component {
       forecast: [],
       loading: true,
     }
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    const city = queryString.parse(this.props.location.search).city;
-
-    this.makeRequest(city);
+    this.city = queryString.parse(this.props.location.search).city;
+    this.makeRequest(this.city);
   }
 
   componentWillReceiveProps(nextProps) {
-    const city = queryString.parse(nextProps.location.search).city;
-
-    this.makeRequest(city)
+    this.city = queryString.parse(nextProps.location.search).city;
+    this.makeRequest(this.city)
   }
 
   makeRequest(city) {
@@ -56,11 +56,18 @@ class Forecast extends React.Component {
       }))
   }
 
+  handleClick(city) {
+    city.cityName = this.city;
+    this.props.history.push({
+      pathname: `/details/${this.city}`,
+      state: city
+    })
+  }
+
   render() {
     const loading = this.state.loading;
     console.log(this.state.forecast);
     
-
     if (loading) {
       return (
         <h2 className="heading-loading ">Loading</h2>
@@ -70,7 +77,7 @@ class Forecast extends React.Component {
         <ul className="weather wrap">
           {this.state.forecast.map((dayDt, index) => {
             return (
-              <DayItem key={index} day={dayDt} />
+              <DayItem onClick={this.handleClick.bind(this, dayDt)} key={index} day={dayDt} />
             );
           })}
         </ul>
