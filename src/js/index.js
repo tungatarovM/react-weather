@@ -5,18 +5,20 @@ import {
     BrowserRouter as Router,
 } from 'react-router-dom';
 
+// Styles
 import '../sass/main.scss';
 
 // COMPONENTS
 import Header from './components/Header';
-import  PrimaryForm from './components/Form';
+import PrimaryForm from './components/Form';
 import Forecast from './components/Forecast';
+import Details from './components/Details';
 
 class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="container">  
           <Route render={(props) => {
             return (<Header 
               onClick={(city) => {
@@ -29,6 +31,7 @@ class App extends React.Component {
           }} />
 
           <main>
+            <Route path="/details/:id" component={Details} />
             <Route path="/forecast"  component={Forecast} />
             <Route exact path="/" render={function(props) {
               return (<PrimaryForm  
@@ -49,5 +52,5 @@ class App extends React.Component {
 
 ReactDom.render(
     <App />,
-    document.getElementById('react-container')
+    document.getElementById('wrap')
 );
