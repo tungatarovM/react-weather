@@ -1,13 +1,12 @@
 .weather {
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
 
   &__day {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+  
     &:not(:last-child) {
       margin-right: 1rem;
     }
@@ -21,6 +20,24 @@
     img {
       height: 100%;
       padding: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .weather {
+
+    &__icon {
+      height: 7rem;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+  .weather {
+
+    &__icon {
+      height: 6rem;
     }
   }
 }
