@@ -1,3 +1,13 @@
-
+// Margins
 .u-margin-bottom-medium { margin-bottom: 2rem !important; }
 .u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-bottom-small-0 { margin-bottom: 1rem !important; }
+
+// Negative margins
+.u-neg-margin-top-small-1 { margin-top: -1rem !important; }
+.u-neg-margin-top-medium-1 { margin-top: -2rem !important; }
+
+.u-text-bold {
+  font-weight: 700;
+  color: $color-black-1;
+}
