@@ -36,13 +36,13 @@ class PrimaryForm extends React.Component {
       <section className="section-form">
         <form className="form form--center">
           <h2 className="heading-secondary u-margin-bottom-medium">
-            Enter a City and State
+            Название города
           </h2>
           <div className="form__group form__group--primary">
             <input 
               className="form__input u-margin-bottom-small" 
               type="text" 
-              placeholder="Enter a city name" 
+              placeholder="Введите название города" 
               onChange={this.handleUpdate}
               value={this.state.city}
               />
@@ -50,7 +50,7 @@ class PrimaryForm extends React.Component {
             <button
               className="btn btn--green btn--medium btn--btn-link"            
               onClick={this.handleClick}>
-                Get Weather
+                Найти
             </button>
           </div>
         </form>

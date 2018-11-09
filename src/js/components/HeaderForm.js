@@ -37,14 +37,14 @@ class HeaderForm extends React.Component {
           <div className="form__group form__group--secondary">
             <input 
             className="form__input form__input--secondary" 
-            type="text" placeholder="Enter a city name" 
+            type="text" placeholder="Введите название города" 
             onChange={this.handleUpdate}
             value={this.state.city}/>
 
             <button
             className="btn btn--green btn--small btn--btn-link"
             onClick={this.handleClick}>
-              Get Weather
+              Найти
             </button>
           </div>
       </form>

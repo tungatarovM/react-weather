@@ -13,16 +13,19 @@ class Header extends React.Component {
       <div className="head-wrapper">
         <header className="header wrap">
           <div className="header__title">
-            <h1 className="heading-primary">
-              Main Header
+            <h1 className="heading-primary u-margin-bottom-small-0">
+              Зонтик
             </h1>
           </div>
           <HeaderForm onClick={this.props.onClick} />
-      </header>
-    </div>
+        </header>
+      </div>
     )
   }
 }
 
+Header.propTypes = {
+  onClick: PropTypes.func.isRequired,
+}
 
 export default Header;
