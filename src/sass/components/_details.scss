@@ -1,0 +1,56 @@
+.details {
+  height: 60rem;
+  position: relative;
+  font-size: 1.5rem;
+  color: $color-grey-light-3;
+  
+  
+  &__item {
+    @include absPosition(30%, 50%);
+    width: 100%;
+    height: 40rem;
+    margin: 3rem 0;
+
+
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 auto;
+    height: 100%;
+  }
+
+  &__condition {
+    margin: 1rem 0;
+  }
+
+  &__icon {
+    height: 15rem;
+    width: 18rem;
+    align-self: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__max,
+  &__min {
+    margin-bottom: 1rem;
+  }
+
+}
+
+// Media Queries 
+@media(max-width: 490px) {
+  
+  .details {
+
+    &__icon {
+      height: 15rem;
+      width: 18rem;
+    }
+  }
+}
