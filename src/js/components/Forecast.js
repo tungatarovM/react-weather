@@ -2,31 +2,23 @@ import React from 'react';
 import PropTypes from 'react-router-dom';
 import queryString from 'query-string';
 
+// Components
+import DayItem from './DayItem';
+
+// Utilities
 import { getForecast } from '../utils/api';
 import { getDate } from '../utils/helpers';
-
-const DayItem = (props) => {
-  console.log(props.day);
-  const date = getDate(props.day.date);
-  return (
-    <li onClick={props.onClick} className="weather__day">
-      <div className="weather__icon">
-        <img src={props.day.condition.icon}></img>
-      </div>
-      <h3 className="heading-tertiary">
-        <span className="date date--month">{date.day} {date.month}</span>
-        <span className="date date--week">{date.weekday}</span>
-      </h3>
-    </li>
-  )
-}
 
 class Forecast extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      forecast: [],
+      forecast: [
+        {
+          location: ''
+        }
+      ],
       loading: true,
     }
 
@@ -53,7 +45,7 @@ class Forecast extends React.Component {
       .then(forecast => this.setState({
         forecast: forecast,
         loading: false,
-      }))
+      })).catch(e => console.log(e));
   }
 
   handleClick(city) {
@@ -65,7 +57,9 @@ class Forecast extends React.Component {
   }
 
   render() {
+    const location = this.state.forecast[0].location;
     const loading = this.state.loading;
+    console.log('THIS IS FROM FORECAST');
     console.log(this.state.forecast);
     
     if (loading) {
@@ -74,6 +68,10 @@ class Forecast extends React.Component {
       )
     } else {
       return (
+        <section className="section-forecast">
+          <h2 className="heading-city-name">
+            {location.country}, {location.region}
+          </h2>
         <ul className="weather wrap">
           {this.state.forecast.map((dayDt, index) => {
             return (
@@ -81,14 +79,10 @@ class Forecast extends React.Component {
             );
           })}
         </ul>
+        </section>
       )
     }  
   }
 }
-
-Forecast.propTypes = {
-
-}
-
 
 export default Forecast;
