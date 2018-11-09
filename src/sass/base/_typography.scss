@@ -29,6 +29,20 @@ body {
     text-align: center;
 }
 
+.heading-city-name {
+    display: block;
+    font-weight: 300;
+    font-size: 4rem;
+    color: $color-grey-light-2;
+    text-align: center;
+
+    &--small {
+        font-weight: 400;
+        font-size: 2.5rem;
+        color: $color-grey-light-3;
+    }
+}
+
 .date {
     text-align: center;
 
@@ -43,3 +57,10 @@ body {
     
 }
 
+// Media Queries 
+
+@media (max-width: 490px ) {
+    .heading-city-name {
+        font-size: 3rem;
+    }
+}
