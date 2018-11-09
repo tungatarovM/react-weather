@@ -6,9 +6,9 @@
     margin: 0 auto;
 }
 
-@mixin absPosition {
+@mixin absPosition($top: 50%, $left: 50%) {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: $top;
+    left: $left;
     transform: translate(-50%, -50%);
 }
