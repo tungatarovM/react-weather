@@ -9,3 +9,14 @@
 .head-wrapper {
   background-image: linear-gradient(to right, $color-orange-light-3, $color-orange-dark-2);
 }
+
+
+// Media Queries 
+
+@media(max-width: 490px ) {
+  .header {
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: .5rem;
+  }
+}
