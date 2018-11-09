@@ -5,6 +5,7 @@ import {
     BrowserRouter as Router,
 } from 'react-router-dom';
 
+
 // Styles
 import '../sass/main.scss';
 
@@ -23,7 +24,7 @@ class App extends React.Component {
             return (<Header 
               onClick={(city) => {
                 props.history.push({
-                  pathname: 'forecast',
+                  pathname: '/forecast',
                   search: '?city=' + city,
                 });
               }} 
@@ -31,7 +32,7 @@ class App extends React.Component {
           }} />
 
           <main>
-            <Route path="/details/:id" component={Details} />
+            <Route path="/details/:city" component={Details} />
             <Route path="/forecast"  component={Forecast} />
             <Route exact path="/" render={function(props) {
               return (<PrimaryForm  
